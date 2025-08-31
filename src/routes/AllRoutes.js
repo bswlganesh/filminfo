@@ -3,7 +3,7 @@ import {MovieDetails,MovieList,PageNotFound,SearchPage} from '../pages'
 
 import React from 'react'
 
-export default function AllRoutes() {
+export function AllRoutes() {
   return (
     <Routes>
         <Route path='/' element={<MovieList/>}/>
