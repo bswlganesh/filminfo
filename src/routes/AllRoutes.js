@@ -8,9 +8,9 @@ export function AllRoutes() {
     <Routes>
         <Route path='/' element={<MovieList/>}/>
         <Route path='/movie/:id' element={<MovieDetails/>}/>
-        <Route path='/movie/popular' element={<MovieList/>}/>
-        <Route path='/movie/top' element={<MovieList/>}/>
-        <Route path='/movie/upcomming' element={<MovieList/>}/>
+        <Route path='/movies/popular' element={<MovieList/>}/>
+        <Route path='/movies/top' element={<MovieList/>}/>
+        <Route path='/movies/upcomming' element={<MovieList/>}/>
         <Route path='/search' element={<SearchPage/>}/>
         <Route path='*' element={<PageNotFound/>}/>
     </Routes>
