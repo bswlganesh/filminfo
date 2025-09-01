@@ -1,0 +1,20 @@
+base url
+https://www.omdbapi.com/?i=tt3896198&apikey=2a6b8207
+
+INDIVISUAL 
+https://www.omdbapi.com/?apikey=2a6b8207&t=Inception
+
+NOW PLAYING 
+https://www.omdbapi.com/?apikey=2a6b8207&s=2025&type=movie
+
+POPULAR
+https://www.omdbapi.com/?apikey=2a6b8207&s=Avengers&type=movie
+
+TOPRATED
+https://www.omdbapi.com/?apikey=2a6b8207&t=The%20Shawshank%20Redemption
+
+UPCOMMING
+https://www.omdbapi.com/?apikey=2a6b8207&s=2026&type=movie
+
+SEARCH
+https://www.omdbapi.com/?apikey=2a6b8207&s=Batman
