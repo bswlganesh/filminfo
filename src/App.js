@@ -1,6 +1,5 @@
 import React from 'react'
 import {Header,Footer} from './components'
-import './App.css';
 //import { MovieDetails} from './pages'
 import ScrollToTop from './components/ScrollToTop'
 import {AllRoutes} from './routes/AllRoutes'
