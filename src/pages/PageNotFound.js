@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import useTitleChange from '../hooks/useTitleChange';
 export default function PageNotFound() {
+   useTitleChange("Page Not Found");
   return (
+
     <main>
       <section className="flex flex-col justify-center px-2">
         <div className="flex flex-col items-center my-4">

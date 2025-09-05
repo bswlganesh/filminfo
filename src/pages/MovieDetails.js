@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import LoadingSpinner from '../components/LoadingSpinner';
+import useTitleChange from '../hooks/useTitleChange';
 
 
 export default function MovieDetails() {
   const { imdbID } = useParams();
   const [movie,setMovie]=useState({});
 const [isLoading, setIsLoading] = useState(true);
-
+ useTitleChange(movie.Title);
 
   // useEffect(()=>{
   //   setIsLoading(true);

@@ -2,15 +2,16 @@ import React from 'react'
 import { useSearchParams } from 'react-router-dom'
 import MovieCard from '../components/MovieCard'
 import useFetch from '../hooks/useFetch'
-
+import useTitleChange from '../hooks/useTitleChange'
 
 export default function SearchPage() {
  
   const [searchParam]=useSearchParams()
   const queryTerm=searchParam.get('s')
- 
+  
    const apiUrl = `https://www.omdbapi.com/?apikey=2a6b8207&s=${queryTerm}`;
    const { data: movies, isLoading } = useFetch({ url: apiUrl });
+    useTitleChange(queryTerm);
   return (
         <main>
       {/* 2. Conditionally render a loading message or the results */}
