@@ -1,0 +1,47 @@
+/* src/pages/SearchPage.css */
+
+/* Keyframes for the pulsing animation */
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-message {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  color: #374151; /* gray-700 */
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.search-results-heading {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  color: #374151; /* gray-700 */
+  text-align: center;
+}
+
+.results-section {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.75rem; /* 28px */
+  padding-bottom: 1.75rem; /* 28px */
+}
+
+.movie-grid {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem; /* Adds space between cards */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .loading-message,
+  .search-results-heading {
+    color: #ffffff;
+  }
+}

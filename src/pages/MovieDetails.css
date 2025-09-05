@@ -1,0 +1,116 @@
+/* MovieDetails.css */
+
+/* --- Global & Dark Mode --- */
+/* (Keep your existing variables at the top) */
+:root {
+  --background-color: #f4f5f7;
+  --card-bg-color: #ffffff;
+  --text-color: #111827;
+  --text-secondary-color: #374151;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-hover-color: rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0d1117;
+    --card-bg-color: #161b22;
+    --text-color: #c9d1d9;
+    --text-secondary-color: #8b949e;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-hover-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+/* --- Main Layout --- */
+
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  /* background-color is now inherited from body */
+  /* color is now inherited from body */
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.movie-details-section {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+
+/* --- Content Styling --- */
+
+.poster-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.movie-poster {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow-hover-color);
+}
+
+.info-container {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.movie-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.movie-plot {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 1rem 0 2rem 0;
+  color: var(--text-secondary-color);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1.5rem;
+}
+
+.info-item {
+  font-size: 0.95rem;
+  color: var(--text-secondary-color);
+}
+
+.info-label {
+  font-weight: 700;
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 600px) {
+  .details-grid {
+    grid-template-columns: 1fr; /* Stack into a single column */
+    gap: 1rem; /* Adjust gap for single column layout */
+  }
+
+  .movie-title {
+    font-size: 1.75rem; /* Slightly smaller title on mobile */
+  }
+
+  .info-container {
+    padding: 0 1.5rem 1.5rem 1.5rem; /* Reduce padding on mobile */
+  }
+}

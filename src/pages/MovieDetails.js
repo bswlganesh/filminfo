@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import LoadingSpinner from '../components/LoadingSpinner';
 import useTitleChange from '../hooks/useTitleChange';
-
+import './MovieDetails.css';
 
 export default function MovieDetails() {
   const { imdbID } = useParams();
@@ -41,31 +41,44 @@ const [isLoading, setIsLoading] = useState(true);
 
 
   return (
-     <main>
+      <main className="page-container">
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        movie && (
-          <section className="flex justify-around flex-wrap py-5">
-            <div className="max-w-sm p-4">
-              <img className="rounded" src={movie.Poster !== 'N/A' ? movie.Poster :" backupimage"} alt={movie.Title} />
+        movie && movie.Title && ( // Check if movie and movie.Title exist before rendering
+          <section className="movie-details-section">
+            <div className="poster-container">
+              <img 
+                className="movie-poster" 
+                src={movie.Poster !== 'N/A' ? movie.Poster : "backupImage"} 
+                alt={movie.Title} 
+              />
             </div>
-            <div className="max-w-2xl text-gray-700 text-lg dark:text-white p-4">
-              <h1 className="text-4xl font-bold my-3 text-center lg:text-left">{movie.Title}</h1>
-              <p className="my-4">{movie.Plot}</p>
-              <p className="my-7">
-                <span className="mr-2 font-bold">Genre:</span>
-                <span>{movie.Genre}</span>
-              </p>
-              <p className="my-7">
-                <span className="font-bold">IMDB Rating:</span> {movie.imdbRating}
-              </p>
-              <p className="my-7">
-                <span className="font-bold">Released:</span> {movie.Released}
-              </p>
-              <p className="my-7">
-                <span className="font-bold">Director:</span> {movie.Director}
-              </p>
+            <div className="info-container">
+              <h1 className="movie-title">{movie.Title}</h1>
+              <p className="movie-plot">{movie.Plot}</p>
+              
+              <div className="details-grid">
+                <p className="info-item">
+                  <span className="info-label">Genre:</span>
+                  <span>{movie.Genre}</span>
+                </p>
+                <p className="info-item">
+                  <span className="info-label">Released:</span> {movie.Released}
+                </p>
+                <p className="info-item">
+                  <span className="info-label">IMDB Rating:</span> {movie.imdbRating} / 10
+                </p>
+                <p className="info-item">
+                  <span className="info-label">Director:</span> {movie.Director}
+                </p>
+                 <p className="info-item">
+                  <span className="info-label">Writer:</span> {movie.Writer}
+                </p>
+                 <p className="info-item">
+                  <span className="info-label">Actors:</span> {movie.Actors}
+                </p>
+              </div>
             </div>
           </section>
         )

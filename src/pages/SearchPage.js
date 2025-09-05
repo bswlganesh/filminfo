@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import MovieCard from '../components/MovieCard'
 import useFetch from '../hooks/useFetch'
 import useTitleChange from '../hooks/useTitleChange'
-
+import './SearchPage.css'
 export default function SearchPage() {
  
   const [searchParam]=useSearchParams()
@@ -13,18 +13,20 @@ export default function SearchPage() {
    const { data: movies, isLoading } = useFetch({ url: apiUrl });
     useTitleChange(queryTerm);
   return (
-        <main>
-      {/* 2. Conditionally render a loading message or the results */}
-      { isLoading ? (
-        <p className="text-3xl text-gray-700 dark:text-white animate-pulse">Searching...</p>
+         <main>
+      {isLoading ? (
+        <p className="loading-message">Searching...</p>
       ) : (
         <>
-          <p className="text-3xl text-gray-700 dark:text-white">
-            { movies.length === 0 ? `No result found for '${queryTerm}'` : `Results for '${queryTerm}'` }
+          <p className="search-results-heading">
+            {movies && movies.length === 0 
+              ? `No result found for '${queryTerm}'` 
+              : `Results for '${queryTerm}'`
+            }
           </p>
-          <section className='max-w-7xl mx-auto py-7'>
-            <div className='flex justify-start flex-wrap'>
-              {movies.map((movie) => (
+          <section className="results-section">
+            <div className="movie-grid">
+              {movies && movies.map((movie) => (
                 <MovieCard key={movie.imdbID} movie={movie} />
               ))}
             </div>
