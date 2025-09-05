@@ -7,7 +7,7 @@ export function AllRoutes() {
   return (
     <Routes>
         <Route path='/' element={<MovieList url="https://www.omdbapi.com/?apikey=2a6b8207&s=2026&type=movie"/>}/>
-        <Route path='/movie/:id' element={<MovieDetails />}/>
+        <Route path='/movie/:imdbID' element={<MovieDetails />}/>
         <Route path='/movies/popular' element={<MovieList url="https://www.omdbapi.com/?apikey=2a6b8207&s=2025&type=movie"/>}/>
         <Route path='/movies/top' element={<MovieList url="https://www.omdbapi.com/?apikey=2a6b8207&s=Avengers&type=movie"/>}/>
         <Route path='/movies/upcomming' element={<MovieList url="https://www.omdbapi.com/?apikey=2a6b8207&s=2026&type=movie"/>}/>

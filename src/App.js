@@ -1,13 +1,15 @@
 import React from 'react'
 import {Header,Footer} from './components'
-//import { MovieList} from './pages'
+//import { MovieDetails} from './pages'
 import {AllRoutes} from './routes/AllRoutes'
 export default function App() {
   return (
     <>              
       <Header/>
+      <main>
+          <AllRoutes />
+        </main>
       
-      <AllRoutes/>
       <Footer/>   
       
     </>
