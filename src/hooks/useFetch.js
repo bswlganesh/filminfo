@@ -7,7 +7,7 @@ export default function useFetch({url}) {
     async function fetchMovie() {
     const res = await fetch(url);
     const json = await res.json();
-    setData(json.Search);
+    setData(json.Search || []);
   }
     fetchMovie();
   }, [url]);
